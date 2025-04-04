@@ -1,0 +1,42 @@
+:root {
+  --cream-color: #f9f6e5;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('./assets/fonts/static/Unbounded-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('./assets/fonts/static/Unbounded-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('./assets/fonts/static/Unbounded-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('./assets/fonts/static/Unbounded-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--cream-color);
+  margin: 0;
+  padding: 0;
+}
