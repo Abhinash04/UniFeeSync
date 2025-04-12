@@ -32,7 +32,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <TooltipProvider>
-        <Toaster /> {/* Only this remains for toast if needed */}
+        <Toaster />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
