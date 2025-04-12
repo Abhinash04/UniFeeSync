@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/context/AuthContext";
-import StudentLayout from "@/components/StudentLayout";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { useAuth } from "../context/AuthContext";
+import StudentLayout from "../components/StudentLayout";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { CalendarCheck, ForkKnife, Receipt, CreditCard, ArrowRight } from "lucide-react";
 
 const StudentDashboard = () => {

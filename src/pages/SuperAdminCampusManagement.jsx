@@ -1,5 +1,5 @@
-import SuperAdminLayout from "@/components/SuperAdminLayout";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import SuperAdminLayout from "../components/SuperAdminLayout";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 
 const SuperAdminCampusManagement = () => {
   return (

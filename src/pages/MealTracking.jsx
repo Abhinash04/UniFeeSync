@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/context/AuthContext";
-import StudentLayout from "@/components/StudentLayout";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useAuth } from "../context/AuthContext";
+import StudentLayout from "../components/StudentLayout";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { ForkKnife, CalendarCheck, Check, X, Info } from "lucide-react";
-import { toast } from "@/components/ui/use-toast";
+import { toast } from "../components/ui/use-toast";
 import { format, addDays, startOfDay } from "date-fns";
 
 const MealTracking = () => {
