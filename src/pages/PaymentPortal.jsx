@@ -213,14 +213,14 @@ const PaymentContent = () => {
             )}
           </div>
         </CardContent>
-        <CardFooter className="border-t bg-muted/50">
+        <CardFooter className="border-t bg-muted/50 p-4">
           <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <p className="text-sm text-muted-foreground">Total Amount</p>
               <p className="text-xl font-bold">₹{parseFloat(amount).toLocaleString()}</p>
             </div>
             <Button 
-              className="w-full sm:w-auto bg-student hover:bg-student-dark"
+              className="w-full sm:w-auto bg-student-dark hover:bg-student"
               onClick={handlePayment}
               disabled={isProcessing}
             >
@@ -280,7 +280,7 @@ const HistoryContent = () => {
     },
   ];
   
-  const [selectedPayment, setSelectedPayment] = useState<typeof payments[0] | null>(null);
+  const [selectedPayment, setSelectedPayment] = useState(payments[0] || null);
   const [showRefundModal, setShowRefundModal] = useState(false);
   
   const handleRefundRequest = () => {
@@ -298,7 +298,7 @@ const HistoryContent = () => {
           <div className="flex items-center justify-between">
             <div>
               <CardTitle>Payment History</CardTitle>
-              <CardDescription>View your past transactions</CardDescription>
+              <CardDescription className="mt-2">View your past transactions</CardDescription>
             </div>
             <CreditCard className="h-6 w-6 text-student" />
           </div>
@@ -308,7 +308,7 @@ const HistoryContent = () => {
             {payments.map((payment, index) => (
               <div 
                 key={index} 
-                className="flex items-center p-4 border rounded-lg cursor-pointer hover:border-student-light"
+                className="flex items-center p-4 rounded-lg cursor-pointer hover:bg-student-light"
                 onClick={() => setSelectedPayment(payment)}
               >
                 <div className={`h-10 w-10 rounded-full flex items-center justify-center mr-4 ${
@@ -379,11 +379,11 @@ const HistoryContent = () => {
               </div>
             </div>
           </CardContent>
-          <CardFooter className="border-t bg-muted/50">
+          <CardFooter className="border-t bg-muted/50 p-4">
             <div className="w-full flex flex-col sm:flex-row items-center gap-4">
               <Button 
                 variant="outline"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto hover:bg-student-dark hover:text-white"
                 onClick={() => setSelectedPayment(null)}
               >
                 Close
@@ -400,7 +400,7 @@ const HistoryContent = () => {
               )}
               <Button 
                 variant="outline"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto bg-student-dark hover:bg-student text-white hover:text-white"
               >
                 Download Receipt
               </Button>

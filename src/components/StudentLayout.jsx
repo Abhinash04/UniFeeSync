@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -38,13 +37,13 @@ const StudentLayout = ({ children, currentPage }) => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-secondary/30">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-white border-none shadow-md">
-        <div className="container mx-auto p-4 flex justify-between items-center">
+        <div className="mr-2.5 ml-2.5 p-4 flex justify-between items-center">
           <div className="flex items-center">
             <CalendarCheck className="h-7 w-7 text-student mr-2" />
-            <h1 className="text-xl font-bold text-student-dark">Student Management System</h1>
+            <h1 className="text-2xl font-bold text-student-dark">UniFeeSync</h1>
           </div>
           <div className="flex items-center gap-4">
             <div className="text-right">
@@ -55,9 +54,9 @@ const StudentLayout = ({ children, currentPage }) => {
               variant="outline" 
               size="icon"
               onClick={handleLogout}
-              className="text-student-dark hover:bg-student-light"
+              className=" hover:bg-student bg-student-dark"
             >
-              <LogOut className="h-5 w-5 text-black" />
+              <LogOut className="h-5 w-5 text-white hover:text-student" />
             </Button>
           </div>
         </div>
@@ -65,16 +64,16 @@ const StudentLayout = ({ children, currentPage }) => {
 
       <div className="flex flex-1">
         {/* Sidebar */}
-        <aside className="hidden md:block w-64 bg-white border-none shadow-md">
-          <nav className="p-4 space-y-2">
+        <aside className="hidden md:block w-64 border-none">
+          <nav className="p-4 space-y-3 m-1 fixed w-62">
             {navItems.map((item) => (
               <Button
                 key={item.path}
                 variant={currentPage === item.name ? "default" : "ghost"}
                 className={`w-full justify-start ${
                   currentPage === item.name 
-                    ? "bg-student hover:bg-student-dark" 
-                    : "hover:bg-student-light/50"
+                    ? "bg-student-dark hover:bg-student" 
+                    : "hover:bg-student-light/70 hover:text-student"
                 }`}
                 onClick={() => navigate(item.path)}
               >
@@ -86,20 +85,20 @@ const StudentLayout = ({ children, currentPage }) => {
         </aside>
 
         {/* Mobile navigation */}
-        <div className="md:hidden border-b bg-white">
-          <div className="flex overflow-x-auto p-2 gap-2">
+        <div className="md:hidden bg-white h-15 fixed z-20 w-full shadow-md">
+          <div className="flex overflow-x-auto p-2.5 gap-2 justify-around">
             {navItems.map((item) => (
               <Button
                 key={item.path}
                 variant={currentPage === item.name ? "default" : "outline"}
                 className={`flex-shrink-0 ${
                   currentPage === item.name 
-                    ? "bg-student hover:bg-student-dark" 
+                    ? "bg-student-dark hover:bg-student" 
                     : "hover:bg-student-light/50"
                 }`}
                 onClick={() => navigate(item.path)}
               >
-                {item.icon}
+                <span className="ml-2 scale-110">{item.icon}</span>
                 <span className="sr-only md:not-sr-only">{item.name}</span>
               </Button>
             ))}
@@ -107,14 +106,24 @@ const StudentLayout = ({ children, currentPage }) => {
         </div>
 
         {/* Main content */}
-        <main className="flex-1 p-4 md:p-6">
+        <main className="hidden md:block flex-1 p-4 md:p-6 bg-gray-100">
           <div className="mb-6">
-            <h1 className="text-2xl font-bold">{currentPage}</h1>
-            <Separator className="mt-2" />
+            <h1 className="text-3xl font-bold">{currentPage}</h1>
+            <Separator className="mt-2 bg-gray-300 h-0.5" />
           </div>
           {children}
         </main>
       </div>
+
+      <main className="md:hidden flex-1 p-4 md:p-6 bg-gray-100 ">
+          <div className="mb-6 mt-17">
+            <h1 className="text-3xl font-bold">{currentPage}</h1>
+            <Separator className="mt-2 bg-gray-300 h-0.5" />
+          </div>
+          {children}
+        </main>
+
+
     </div>
   );
 };

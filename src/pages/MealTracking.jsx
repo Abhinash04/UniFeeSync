@@ -75,7 +75,7 @@ const MealTrackingContent = () => {
           <div className="flex items-center justify-between">
             <div>
               <CardTitle>Today's Meals</CardTitle>
-              <CardDescription>{format(new Date(), "EEEE, MMMM d, yyyy")}</CardDescription>
+              <CardDescription className="mt-2">{format(new Date(), "EEEE, MMMM d, yyyy")}</CardDescription>
             </div>
             <ForkKnife className="h-6 w-6 text-student" />
           </div>
@@ -90,7 +90,7 @@ const MealTrackingContent = () => {
                 </div>
                 <Button
                   variant={meal.marked ? "default" : "outline"}
-                  className={meal.marked ? "bg-green-600 hover:bg-green-700" : ""}
+                  className={meal.marked ? "bg-green-600 hover:bg-green-700" : "hover:bg-student-light"}
                   onClick={() => handleMarkMeal(meal.id)}
                   disabled={meal.marked}
                 >
@@ -214,7 +214,7 @@ const NonMessDaysContent = () => {
                   <Button
                     variant={isMarked ? "default" : "outline"}
                     size="sm"
-                    className={`mt-2 w-full ${isMarked ? "bg-student hover:bg-student-dark" : "border-student-light hover:bg-student-light/50 text-student-dark"}`}
+                    className={`mt-2 w-full ${isMarked ? "bg-student-dark hover:bg-student" : "border-student-light hover:bg-student-light text-student-dark"}`}
                     onClick={() => isMarked ? handleRemoveNonMessDay(date) : handleMarkNonMessDay(date)}
                   >
                     {isMarked ? (
@@ -250,7 +250,7 @@ const NonMessDaysContent = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                      className="text-red-500 hover:text-red-700 hover:bg-red-100"
                       onClick={() => handleRemoveNonMessDay(date)}
                     >
                       <X className="mr-1 h-4 w-4" /> Cancel

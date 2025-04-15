@@ -23,7 +23,7 @@ const FeeManagement = () => {
   }
 
   return (
-    <StudentLayout currentPage="Fee & Invoice Management">
+    <StudentLayout currentPage="Fee & Invoice">
       <Tabs defaultValue="summary" className="w-full">
         <TabsList className="grid w-full grid-cols-2 mb-6">
           <TabsTrigger value="summary">Fee Summary</TabsTrigger>
@@ -103,7 +103,7 @@ const FeeSummaryContent = () => {
                   {fee.status === "pending" && (
                     <Button
                       size="sm"
-                      className="bg-student hover:bg-student-dark"
+                      className="bg-student-dark hover:bg-student"
                       onClick={() => navigate("/student/payment-portal")}
                     >
                       Pay Now
@@ -114,13 +114,13 @@ const FeeSummaryContent = () => {
             ))}
           </div>
         </CardContent>
-        <CardFooter className="border-t border-[#dbdbdb] bg-muted/50 flex justify-between">
+        <CardFooter className="border-t border-[#dbdbdb] bg-muted/50 flex justify-between p-4">
           <div>
             <p className="text-sm text-muted-foreground">Total Due Amount</p>
             <p className="text-xl font-bold">₹{totalPending.toLocaleString()}</p>
           </div>
           <Button
-            className="bg-student hover:bg-student-dark"
+            className="bg-student-dark hover:bg-student"
             onClick={() => navigate("/student/payment-portal")}
           >
             Proceed to Payment
@@ -212,7 +212,7 @@ const InvoicesContent = () => {
                   {invoice.status === "pending" && (
                     <Button
                       size="sm"
-                      className="bg-student hover:bg-student-dark"
+                      className="bg-student-dark hover:bg-student"
                     >
                       Pay Now
                     </Button>
